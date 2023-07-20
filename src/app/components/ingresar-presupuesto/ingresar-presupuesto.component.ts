@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { PresupuestoService } from 'src/app/services/presupuesto.service';
 
 @Component({
   selector: 'app-ingresar-presupuesto',
@@ -10,9 +12,21 @@ export class IngresarPresupuestoComponent {
   cantidadIncorrecta:boolean;
 
 
-  constructor(){
+  constructor(private _presupuestoService:PresupuestoService, 
+              private router:Router){
     this.cantidad = 0
     this.cantidadIncorrecta = false
+  }
+
+  agregar(){
+    if(this.cantidad > 0){
+      this.cantidadIncorrecta = false
+      this._presupuestoService.presupuesto = this.cantidad
+      this._presupuestoService.restante = this.cantidad
+      this.router.navigate(['/gastos'])
+    }else{
+      this.cantidadIncorrecta = true
+    }
   }
 }
 
