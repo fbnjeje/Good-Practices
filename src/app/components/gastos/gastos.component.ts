@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PresupuestoService } from 'src/app/services/presupuesto.service';
 
 @Component({
   selector: 'app-gastos',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class GastosComponent {
 
+
+  constructor(private _presupuestoService:PresupuestoService){
+
+  }
+
+  ngOnInit(){
+    console.log(this._presupuestoService.presupuesto);
+  }
 }
