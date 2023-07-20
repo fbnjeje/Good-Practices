@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./ingresar-presupuesto.component.scss']
 })
 export class IngresarPresupuestoComponent {
+  cantidad:number;
+  cantidadIncorrecta:boolean;
 
+
+  constructor(){
+    this.cantidad = 0
+    this.cantidadIncorrecta = false
+  }
 }
+
+
