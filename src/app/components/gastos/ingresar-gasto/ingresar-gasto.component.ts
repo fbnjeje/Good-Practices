@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./ingresar-gasto.component.scss']
 })
 export class IngresarGastoComponent {
+nombreGasto:string;
+cantidad:number;
+formularioIncorrecto:boolean;
+textIncorrecto:string;
 
+constructor(){
+  this.nombreGasto='';
+  this.cantidad = 0;
+  this.formularioIncorrecto = false
+  this.textIncorrecto ='Nombrea o gasto incorrecto'
+}
 }
