@@ -15,6 +15,15 @@ constructor(){
   this.nombreGasto='';
   this.cantidad = 0;
   this.formularioIncorrecto = false
-  this.textIncorrecto ='Nombrea o gasto incorrecto'
+  this.textIncorrecto ='Nombre o gasto cantidad incorrecta'
+}
+agregarGasto(){
+  if(this.nombreGasto === '' || this.cantidad <= 0){
+    this.formularioIncorrecto = true
+  }else{
+    this.formularioIncorrecto = false
+
+  }
 }
 }
+
