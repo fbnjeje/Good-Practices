@@ -18,6 +18,8 @@ export class PresupuestoService {
     this.restante = this.restante - gasto.cantidad
     this.gastos$.next(gasto)
   }
-  getGastos(): Observable<any>
-  
+  getGastos(): Observable<any>{
+    return this.gastos$.asObservable();
+  }
+
 }
