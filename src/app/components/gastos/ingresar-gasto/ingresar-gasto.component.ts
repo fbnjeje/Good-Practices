@@ -1,5 +1,6 @@
 import { PresupuestoService } from 'src/app/services/presupuesto.service';
 import { Component } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-ingresar-gasto',
@@ -30,24 +31,27 @@ if(this.cantidad > this._presupuestoService.restante){
   if(this.nombreGasto === '' || this.cantidad <= 0){
     this.formularioIncorrecto = true
   }else{
-    const GASTOS= {
-      nombre = this.nombreGasto,
-      cantidad = this.Cantidad
-      
+    //OBJETO
+    const GASTO= {
+      nombre: this.nombreGasto,
+      cantidad:  this.cantidad
     } 
+    //ENVIAMOS EL OBJETO A LOS SUSCRIPTORES VIA SUBJET
+    this._presupuestoService.agrergarGasto(GASTO)
 
-  }
-
-
-
-
-
+    //RESETEAMOS EL FORMULARIO
     this.formularioIncorrecto = false
     this.nombreGasto = ''
     this.cantidad = 0
   }
+
+
+
+
+
+  }
 }
 
 
-}
+
 
