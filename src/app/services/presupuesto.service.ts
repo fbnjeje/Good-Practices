@@ -11,4 +11,8 @@ export class PresupuestoService {
     this.presupuesto = 0;
     this.restante = 0;
   }
+
+  agrergarGasto(gasto:any){
+    this.restante = this.restante - gasto.cantidad
+  }
 }
